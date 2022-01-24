@@ -50,7 +50,8 @@
                 <div class="footer">
                     <div class="margin">
                         <span><i class="far fa-laugh"></i></span>
-                        <input v-model="nuovoMex" type="text" @keyup.enter="aggiuntaMessaggio(contacts[currentIndex])">
+                        <input class="barra-testo" v-model="nuovoMex" type="text" 
+                        @keyup.enter="aggiuntaMessaggio(contacts[currentIndex])">
                         <span><i @click="aggiuntaMessaggio(contacts[currentIndex])" class="fas fa-play"></i></span>
                         <span><i class="fas fa-microphone"></i></span>
                     </div>    

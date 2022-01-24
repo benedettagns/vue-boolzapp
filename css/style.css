@@ -89,12 +89,25 @@
 }
 
 .footer {
-    height:50px;
+    height:60px;
     background-color: whitesmoke;
     color: grey;
+
+
+}
+
+.footer span i {
+    padding-left:10px ;
+    padding-right: 20px;
 }
 
 .margin {
-    margin-left: 400px;
+    margin-left: 150px;
     padding-top: 15px;
+}
+
+.barra-testo{
+    width: 600px;
+    height: 40px;
+    border-radius: 8px;
 }
