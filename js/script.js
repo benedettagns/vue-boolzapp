@@ -93,14 +93,17 @@ new Vue({
     },
     
     methods: {
-        // cambioChat: function() {
-            
+        immaginiUtenti(utenti){
+            return `img/avatar${utenti.avatar}.jpg`
+        },
+
+        // cambioChat: function() {   
         // },
 
-        aggiuntaMessaggio: function() {
-            this.contacts.messages.push({
-                text: [this.nuovoMex],
-                status: 'received',
+        aggiuntaMessaggio(utenti) {
+            utenti.messages.push({
+                text: this.nuovoMex,
+                status: 'sent',
             });
             this.nuovoMex= '';
         },

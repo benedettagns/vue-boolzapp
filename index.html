@@ -13,27 +13,25 @@
 <body>
 
     <div id="app">
-        <!-- contenitore -->
+
         <div class="container">
 
-        <!-- barra laterare  -->
             <div class="menu">
+
                 <div class="header">
-                    <img src="img 3/avatar_1.jpg" alt="">
+                    <img src="img/avatar_io.jpg" alt="">
                     <span>Nome Utente</span>
                     <div class="icon">
                         <span><i class="fas fa-circle-notch"></i></span>
                         <span><i class="fas fa-comment-alt"></i></span>
                         <span><i class="fas fa-ellipsis-v"></i></span>
-                    </div>
-                    
+                    </div>    
                 </div>
 
-                <input class="ricerca" type="text" value="cerca">
+                <input class="ricerca" type="text" placeholder="cerca">
 
-            <!-- lista degli utenti -->
-                <div v-for="utenti in contacts" class="utenti" @click="cambioChat(index)">
-                    <img src="img 3/avatar_1.jpg" alt="">
+                <div v-for="utenti in contacts" class="utenti">
+                    <img :src="immaginiUtenti(utenti)" alt="">
                     <p class="name">{{utenti.name}}</p>
                 </div>    
             </div>
@@ -52,8 +50,9 @@
                 <div class="footer">
                     <div class="margin">
                         <span><i class="far fa-laugh"></i></span>
-                        <input v-model="nuovoMex" type="text">
-                        <span><i @click="aggiuntaMessaggio" class="fas fa-microphone"></i></span>
+                        <input v-model="nuovoMex" type="text" @keyup.enter="aggiuntaMessaggio(contacts[currentIndex])">
+                        <span><i @click="aggiuntaMessaggio(contacts[currentIndex])" class="fas fa-play"></i></span>
+                        <span><i class="fas fa-microphone"></i></span>
                     </div>    
                 </div>
             </div>
