@@ -91,18 +91,6 @@ new Vue({
         currentIndex : 0,  
         nuovoMex: '',
     },
-    
-    /*Visualizzazione dinamica dei messaggi: 
-    tramite la direttiva v-for, visualizzare tutti i messaggi 
-    relativi al contatto attivo all’interno del pannello della 
-    conversazione
-    Click sul contatto mostra la conversazione del contatto 
-    cliccato
-    */
-
-    /*Risposta dall’interlocutore: ad ogni inserimento di un 
-    messaggio, l’utente riceverà un “ok” come risposta, che 
-    apparirà dopo 1 secondo.*/
 
     /*Ricerca utenti: scrivendo qualcosa nell’input a 
     sinistra, vengono visualizzati solo i contatti il cui nome 
@@ -114,8 +102,9 @@ new Vue({
             return `img/avatar${utenti.avatar}.jpg`
         },
 
-        // cambioChat: function() {   
-        // },
+        cambioChat: function() {   
+            this.currentIndex++;
+        },
 
         aggiuntaMessaggio(utenti) {
             utenti.messages.push({
@@ -123,7 +112,14 @@ new Vue({
                 status: 'sent',
             });
             this.nuovoMex= '';
+            setTimeout(function() {
+                utenti.messages.push({
+                    text: 'ok',
+                    status: 'received',
+                });
+                this.nuovoMex+= '';
+            }, 1000);
         },
-            
+        
     },
 })

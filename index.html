@@ -30,9 +30,9 @@
 
                 <input class="ricerca" type="text" placeholder="cerca">
 
-                <div v-for="utenti in contacts" class="utenti">
+                <div v-for="(utenti,indice) in contacts" class="utenti">
                     <img :src="immaginiUtenti(utenti)" alt="">
-                    <p class="name">{{utenti.name}}</p>
+                    <p class="name" @click="cambioChat"> {{utenti.name}} </p>
                 </div>    
             </div>
 
@@ -41,8 +41,8 @@
                 <div class="header"></div>
 
                 <div class="container-messages">
-                    <div  v-for="messaggi in contacts[currentIndex].messages" :class="messaggi.status">
-                        {{messaggi.text}}
+                    <div v-for="messaggi in contacts[currentIndex].messages" :class="messaggi.status">
+                        {{messaggi.text}}    
                     </div>
                 </div>
                 
@@ -50,9 +50,15 @@
                 <div class="footer">
                     <div class="margin">
                         <span><i class="far fa-laugh"></i></span>
-                        <input class="barra-testo" v-model="nuovoMex" type="text" 
+
+                        <input type="text" class="barra-testo"
+                        v-model="nuovoMex"
                         @keyup.enter="aggiuntaMessaggio(contacts[currentIndex])">
-                        <span><i @click="aggiuntaMessaggio(contacts[currentIndex])" class="fas fa-play"></i></span>
+
+                        <span>
+                            <i @click="aggiuntaMessaggio(contacts[currentIndex])" class="fas fa-play"></i>
+                        </span>
+
                         <span><i class="fas fa-microphone"></i></span>
                     </div>    
                 </div>
