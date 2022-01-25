@@ -102,10 +102,6 @@ new Vue({
             return `img/avatar${utenti.avatar}.jpg`
         },
 
-        cambioChat: function() {   
-            this.currentIndex++;
-        },
-
         aggiuntaMessaggio(utenti) {
             utenti.messages.push({
                 text: this.nuovoMex,

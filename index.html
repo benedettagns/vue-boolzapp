@@ -21,6 +21,7 @@
                 <div class="header">
                     <img src="img/avatar_io.jpg" alt="">
                     <span>Nome Utente</span>
+
                     <div class="icon">
                         <span><i class="fas fa-circle-notch"></i></span>
                         <span><i class="fas fa-comment-alt"></i></span>
@@ -32,7 +33,7 @@
 
                 <div v-for="(utenti,indice) in contacts" class="utenti">
                     <img :src="immaginiUtenti(utenti)" alt="">
-                    <p class="name" @click="cambioChat"> {{utenti.name}} </p>
+                    <p @click="currentIndex = indice"> {{utenti.name}} </p>
                 </div>    
             </div>
 

@@ -66,6 +66,12 @@
     background-image: url("../img/mine.jpg");
 }
 
+.image{
+    width: 60px;
+    border-radius: 30px;
+    margin-left: 20px;
+}
+
 .container-messages {
     height: 550px;
     display: flex;
